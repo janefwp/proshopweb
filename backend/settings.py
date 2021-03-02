@@ -210,4 +210,6 @@ CORS_ALLOW_ALL_ORIGINS = True
 #AWS_STORAGE_BUCKET_NAME = 'proshop-bucket-demo'
 
 if os.getcwd() == '/app':
+    # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    # SECURE_SSL_REDIRECT = True
     DEBUG = False
