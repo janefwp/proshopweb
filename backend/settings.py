@@ -123,32 +123,32 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'proshop',
-        'USER': 'root',
-        'PASSWORD': os.environ.get('DB_PASS'),
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-        # 'OPTIONS': {
-        #     'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        # }
-    }
-}
-
-# # this is for mysql on AWS
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
 #         'NAME': 'proshop',
-#         'USER': 'admin',
+#         'USER': 'root',
 #         'PASSWORD': os.environ.get('DB_PASS'),
-#         'HOST': 'proshop.ch9gmqjo0hxp.us-east-2.rds.amazonaws.com',
+#         'HOST': '127.0.0.1',
 #         'PORT': '3306',
-
+#         # 'OPTIONS': {
+#         #     'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+#         # }
 #     }
 # }
+
+# this is for mysql on AWS
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'proshop',
+        'USER': 'admin',
+        'PASSWORD': os.environ.get('DB_PASS'),
+        'HOST': 'proshop.ch9gmqjo0hxp.us-east-2.rds.amazonaws.com',
+        'PORT': '3306',
+
+    }
+}
 
 
 # Password validation
@@ -201,13 +201,13 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 CORS_ALLOW_ALL_ORIGINS = True
 
 # Dont forget to reset database connection and hide password
-#AWS_QUERYSTRING_AUTH = False
-#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_QUERYSTRING_AUTH = False
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-#AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-#AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 
-#AWS_STORAGE_BUCKET_NAME = 'proshop-bucket-demo'
+AWS_STORAGE_BUCKET_NAME = 'proshop-bucket-demo'
 
 if os.getcwd() == '/app':
     # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
