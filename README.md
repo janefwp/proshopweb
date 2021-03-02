@@ -8,13 +8,11 @@ Setup Instructions
 
 2 - cd env
 
-3 - source env/bin/active
+3 - source env/bin/activate
 
-4 - cd backend
+4 - pip install -r requirements.txt
 
-5 - pip install requirements.txt
-
-6 - python manage.py runserver
+5 - python manage.py runserver
 
 
 
