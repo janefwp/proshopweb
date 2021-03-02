@@ -143,7 +143,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'proshop',
         'USER': 'admin',
-        'PASSWORD': os.environ.get('DB_PASS'),
+        'PASSWORD': os.environ.get('DB_AWS_PASS'),
         'HOST': 'proshop.ch9gmqjo0hxp.us-east-2.rds.amazonaws.com',
         'PORT': '3306',
 
@@ -207,7 +207,7 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 
-AWS_STORAGE_BUCKET_NAME = 'proshop-bucket-demo'
+AWS_STORAGE_BUCKET_NAME = 'myproshop-bucket'
 
 if os.getcwd() == '/app':
     # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
